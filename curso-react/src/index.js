@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Usercard } from "./Greeting"; //Importanto nuestra funcion
-
-//Dom - Document object model - Es el documento que manipulamos en el navegador
-//Los componentes siempre van con la primera en mayuscula
+//import { Usercard } from "./Greeting"; //Importanto nuestra funcion
+import { Button } from "./Button";
 
 const root = ReactDOM.createRoot(document.getElementById("root")); //Creamos un root
 
-//Frangment <>  </> es una  etiqueta padre que encierra todas las etiquetas, sin necesidad de poner varios DIV
 root.render(
-  //Podemos pasar propiedades al componente gracias a los props
-  //Tambien puedo pasar funciones como props
   <>
-    <Usercard
+  {/*De esta manera realizamos comentario*/}
+  <Button text="Click me"/>
+  <Button text="Pay"/>
+  <Button text="Log out"/>
+  <Button/>
+    {/* <Usercard
       name="Ryan Ray"
       amount={3000}
       married={true}
@@ -33,6 +33,6 @@ root.render(
       married={true}
       points={[910, 123, 122.2]}
       address={{street: "115 # 132", city: "Bucaramanga" }}
-    />
+    /> */}
   </>
 );
