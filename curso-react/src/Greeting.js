@@ -1,11 +1,12 @@
-export function Greeting() {
+export function Greeting(props) {
+  //Props parametros dentro de una funcion
     const user = {
       firstname: 'raul',
       lastname: 'jimenez',
       trabaja:true
     }
     return <>
-      <h1>Componente de React</h1>
+      <h1>Componente {props.title}</h1>
       <h1>{user.firstname}</h1>
       <h3>{user.lastname}</h3>
       <h3>{user.trabaja.toString()}</h3>

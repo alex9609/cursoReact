@@ -11,12 +11,14 @@ const root = ReactDOM.createRoot(document.getElementById("root")); //Creamos un 
 
 //Frangment <>  </> es una  etiqueta padre que encierra todas las etiquetas, sin necesidad de poner varios DIV
 root.render(
+  //Podemos pasar propiedades al componente gracias a los props
   <>
-    <Greeting/>
+    <Greeting title="Hola"/> 
     <Usercard/>
-    <Greeting/>
+    <Greeting title="Segundo"/>
     <Usercard/>
     <Product/>
     <Navegacion/>
+    <Greeting title={[1,2,3]}/>
   </>
 );
