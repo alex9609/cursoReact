@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById("root")); //Creamos un 
 root.render(
   //Podemos pasar propiedades al componente gracias a los props
   <>
-    <Greeting title="Hola"/> 
+    <Greeting title="Hola" name="nombre"/> 
     <Usercard/>
     <Greeting title="Segundo"/>
     <Usercard/>
