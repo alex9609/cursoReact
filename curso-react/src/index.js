@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {Greeting,Usercard} from "./Greeting"; //Importanto nuestra funcion
-import Product,{Navegacion} from "./Product";
-
+import { Usercard } from "./Greeting"; //Importanto nuestra funcion
 
 //Dom - Document object model - Es el documento que manipulamos en el navegador
 //Los componentes siempre van con la primera en mayuscula
@@ -13,12 +11,26 @@ const root = ReactDOM.createRoot(document.getElementById("root")); //Creamos un 
 root.render(
   //Podemos pasar propiedades al componente gracias a los props
   <>
-    <Greeting title="Hola" name="nombre"/> 
-    <Usercard/>
-    <Greeting title="Segundo"/>
-    <Usercard/>
-    <Product/>
-    <Navegacion/>
-    <Greeting title={[1,2,3]}/>
+    <Usercard
+      name="Ryan Ray"
+      amount={3000}
+      married={true}
+      points={[99, 33, 22.2]}
+      address={{ street: "145 # 132", city: "Medellín" }}
+    />
+    <Usercard
+      name="Sauil Ray"
+      amount={4000}
+      married={false}
+      points={[99, 33, 22.2]}
+      address={{ street: "125 # 132", city: "Cartagena" }}
+    />
+    <Usercard
+      name="Miguel Ray"
+      amount={2500}
+      married={true}
+      points={[910, 123, 122.2]}
+      address={{ street: "115 # 132", city: "Bucaramanga" }}
+    />
   </>
 );
