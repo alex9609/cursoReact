@@ -6,6 +6,7 @@ const root = ReactDOM.createRoot(document.getElementById("root")); //Creamos un 
 
 root.render(
   <>
-    <TaskCard/>
+    <TaskCard ready={true}/>
+    <TaskCard ready={false}/>
   </>
 );

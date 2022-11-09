@@ -1,17 +1,23 @@
-export function TaskCard(){
+//Create reack app - usa webpack para poder cargar estilos dentro de javascript
+//Importando estilos
+import "./task.css";
 
-    //Podemos añadir estilos como variables
-    const cardStyles = {
-        background: "#00112c",
-        color:"#ffff",
-        padding: "15px"
-    }
-
-    const titleStyle = {
-        fontWeight:"ligther"
-    }
-    return <div style={cardStyles}>
-        <h1 style={titleStyle}>Mi primer tarea</h1>
-        <p>Tarea realizada</p>
+//Manejando estilos de manera condicional
+export function TaskCard({ ready }) {
+  return (
+    <div className="card">
+      <h1>Mi primer tarea</h1>
+      <span
+        style={ready ? { background: "green" } : { background: "red" }} //Estilos de con codigo
+      >
+        {ready ? "Tarea realizada " : "Tarea pendiente"}
+      </span>
+        <hr/>
+      <span
+      className={ready ? 'bg-green':'bg-red'}
+      >
+        {ready ? "Tarea realizada " : "Tarea pendiente"}
+      </span>
     </div>
+  );
 }
