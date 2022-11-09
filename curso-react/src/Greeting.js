@@ -6,14 +6,15 @@ export function Greeting({title,name='user'}) {
   }
 
   //Creando otro componente
-export function Usercard(props){
+export function Usercard({name,amount,married,points,address,greet}){
+  console.log(greet)
     return <>
       <div>
-        <h1>{props.name}</h1>
-        <p>${props.amount}</p>
-        <p>{props.married ? "Married" : "Single"}</p>
-        <p>{props.points}</p>
-        <p>{props.address.street} - {props.address.city}</p>
+        <h1>{name}</h1>
+        <p>💵{amount}</p>
+        <p>{married ? "Married" : "Single"}</p>
+        <p>{points}</p>
+        <p>{address.street} - {address.city}</p>
       </div>
     </>; 
 }
