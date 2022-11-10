@@ -1,37 +1,30 @@
-import React from "react";
+import React,{useState}from "react";
 import ReactDOM from "react-dom/client";
 const root = ReactDOM.createRoot(document.getElementById("root")); //Creamos un root
 
-const user = [
-    { 
-      id:1,
-      name: 'raul ray',
-      image: 'https://robohash.org/user'
-    },
-    { 
-      id:2,
-      name: 'migue ray',
-      image: 'https://robohash.org/user2'
-    },
-    { 
-      id:3,
-      name: 'catan ray',
-      image: 'https://robohash.org/user4'
-    }
-]
+const Counter = () => {
 
-//Iteracion de arreglos
-//Se hace mediante metodos de arreglos
-//funcion map,filter,reduce,foreach
+  //Este state es un elemento que tiene un array y al lado una funcion
+  //counter es la variable , setCounter es la funcion que me permite modificar esa variable
+  //el 0 en useState(0) es para inicializar nuestro counter a 0
+  const [counter, setCounter] = useState(10)
+
+
+
+  return <>
+    <div>
+      <h1>Counter : {counter}</h1>
+      <button onClick={() => {setCounter(counter + 1)}}>sumar</button>
+      <hr></hr>
+      <button onClick={() => {setCounter(counter - 1)}}>restar</button>
+      <hr></hr>
+      <button onClick={() => {setCounter(10)}}>restart</button>
+    </div>
+  </>
+}
+
 root.render(
   <>
-    {user.map((user,index) =>{
-      return <div key={user.id}>
-                <h1>{user.name} {index}</h1>
-                <img src={user.image} alt=""/>
-             </div>
-    })}
+    <Counter/>
   </>
 );
-
-/** Consultar los diferentes on ej: onBlur, onDoubleClick, on */
