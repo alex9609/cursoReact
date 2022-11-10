@@ -1,13 +1,29 @@
-import React,{useState}from "react";
+import React,{useState,useEffect}from "react";
 import ReactDOM from "react-dom/client";
 const root = ReactDOM.createRoot(document.getElementById("root")); //Creamos un root
 
 const Counter = () => {
 
-  //Este state es un elemento que tiene un array y al lado una funcion
-  //counter es la variable , setCounter es la funcion que me permite modificar esa variable
-  //el 0 en useState(0) es para inicializar nuestro counter a 0
-  const [mensaje, setMensaje] = useState("")
+ /**
+  * useEfect sirve cuando quiero hacer algún cambio en la interfaz
+  * 
+  * el useEffect siempre funciona cuando se hace un cambio en el componente
+  * 
+  */
+  const [mensaje, setMensaje] = useState("") //useState devuelve un arreglo
+  const [counter, setCounter] = useState(0) //Quiero que el useEffect cambie cuando solo el counter cambie
+
+  useEffect(() =>{
+    console.log("render")
+  },[counter])
+
+  useEffect(() =>{
+    console.log("render")
+  },[]) //No le estoy especificando  que variable debe cambiars
+
+  useEffect(() =>{
+    console.log("render")
+  }) //Cuando el documento cambia
 
 
 
@@ -17,6 +33,10 @@ const Counter = () => {
       <button onClick={() => {
         alert("El mensaje es: " + mensaje)
       }}>Save</button>
+
+      <hr/>
+      <h1>Counter: {counter}</h1>
+      <button onClick={() => setCounter(counter +1)}> Incrementar</button>
     </div>
   </>
 }
