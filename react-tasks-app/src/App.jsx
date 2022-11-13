@@ -1,7 +1,7 @@
 import React from 'react'
-import TaskList from './TaskList'
-import TaskForm from './TaskForm'
-import {tasks as data} from './tasks'
+import TaskList from './components/TaskList'
+import TaskForm from './components/TaskForm'
+import {tasks as data} from './data/tasks'
 import { useState, useEffect } from 'react'
 
 
@@ -17,12 +17,12 @@ function App() {
 		setTasks(data)
 	},[])
 
-  const createTask = (taskTitle,taskDescription) =>{
+  const createTask = (task) =>{
     //Copia todo el arreglo de tareas y añade un nuevo elemento
     setTasks([...tasks,{
-      title: taskTitle,
+      title: task.title,
       id: tasks.length,
-      description:taskDescription
+      description:task.description
     }]) //Aqui añadimos algo nuevo al arreglo o un nuevo elemento al arreglo sin alterar el arreglo
   }
 
