@@ -26,11 +26,16 @@ function App() {
     }]) //Aqui añadimos algo nuevo al arreglo o un nuevo elemento al arreglo sin alterar el arreglo
   }
 
+  const deleteTask = (id) =>{
+    //Copia todo el arreglo de tareas y añade un nuevo elemento 
+    setTasks(tasks.filter(task => task.id !== id))
+  }
+
   return (
     <div>
       {/** le pasamos la función al prop*/}
-      <TaskForm createTask={createTask}/>
-      <TaskList tasks={tasks}/>
+      <TaskForm createTask={createTask} />
+      <TaskList tasks={tasks} deleteTask={deleteTask}/>
     </div>
   )
 }
