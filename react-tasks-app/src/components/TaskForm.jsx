@@ -1,13 +1,14 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import {TaskContext} from '../context/TaskContext'
 
-export default function TaskForm({createTask}) {
-	//createTask es la función que creamos en App 
+export default function TaskForm() {
 
 	//ESTADO PARA LAS TAREAS
 	const [title, setTitle] = useState("")
 
 	const [description, setDescription] = useState("")
+	const {createTask} = useContext(TaskContext) //De los valores solo quiero el create task
 
 	const handleSubmit = (e) =>{
 		e.preventDefault()
